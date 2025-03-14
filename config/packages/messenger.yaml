@@ -1,0 +1,9 @@
+
+framework:
+    messenger:
+
+        transports:
+            #async: '%env(MESSENGER_TRANSPORT_DSN)%'
+
+        routing:
+            #'App\Message\OrderProcessed': async

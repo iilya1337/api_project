@@ -1,14 +1,14 @@
 <?php
 
-namespace App\DTO\Response;
+namespace App\DTO\Request;
 
 use App\Entity\Dish;
+use JsonSerializable;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Symfony\Component\Validator\Validation;
-use JsonSerializable;
 
-class DishResponse implements JsonSerializable
+class DishRequest implements JsonSerializable
 {
 
     public function __construct(
