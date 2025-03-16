@@ -24,10 +24,18 @@ class MenuController extends AbstractController
         ]);
     }
 
+    #[Route('/dish/{id}', name: 'app_menu_dis', methods: ['GET'])]
+    public function dis(DishRequest $dish): JsonResponse
+    {
+        return $this->json($dish);
+    }
+
     #[Route('/dish/{id}', name: 'app_menu_dish', methods: ['GET'])]
     public function dish(DishRequest $dish): JsonResponse
     {
         return $this->json($dish);
     }
+
+
 
 }
