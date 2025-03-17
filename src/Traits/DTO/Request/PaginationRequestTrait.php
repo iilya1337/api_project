@@ -2,7 +2,7 @@
 
 namespace App\Traits\DTO\Request;
 
-use App\DTO\Request\MenuRequest;
+use App\DTO\Request\Query\MenuRequest;
 use Doctrine\ORM\QueryBuilder;
 
 trait PaginationRequestTrait

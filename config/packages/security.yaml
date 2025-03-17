@@ -24,10 +24,10 @@ security:
         failure_handler: lexik_jwt_authentication.handler.authentication_failure
 
     api:
-      pattern: ^/
+      pattern: ^/user
       stateless: true
       jwt: ~
 
   access_control:
     - { path: ^/login, roles: PUBLIC_ACCESS }
-    - { path: ^/,      roles: IS_AUTHENTICATED_FULLY }
+    - { path: ^/user,      roles: IS_AUTHENTICATED_FULLY }

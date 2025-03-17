@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use App\DTO\Request\DishRequest;
-use App\DTO\Request\MenuRequest;
+use App\DTO\Request\Query\DishRequest;
+use App\DTO\Request\Query\MenuRequest;
 use App\Service\MenuService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/user/menu')]
+#[Route('/menu')]
 class MenuController extends AbstractController
 {
     public function __construct(

@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-use App\DTO\Request\MenuRequest;
+use App\DTO\Request\Query\MenuRequest;
 use App\Repository\DishRepository;
 use App\Traits\DTO\Request\PaginationRequestTrait;
 

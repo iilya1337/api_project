@@ -1,8 +1,7 @@
 <?php
 
-namespace App\ValueResolver;
+namespace App\ValueResolver\QueryResolver;
 
-use App\DTO\Request\MenuRequest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ValueResolverInterface;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
@@ -10,7 +9,7 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class DtoRequestResolver implements ValueResolverInterface
+class DtoRequestQueryResolver implements ValueResolverInterface
 {
     public function __construct(
         private readonly SerializerInterface $serializer,
@@ -19,9 +18,9 @@ class DtoRequestResolver implements ValueResolverInterface
     {
     }
 
-    public function supports(Request $request, ArgumentMetadata $argument): bool
+    public function supports(ArgumentMetadata $argument): bool
     {
-        return str_starts_with($argument->getType(), 'App\\DTO\\');
+        return str_starts_with($argument->getType(), 'App\\DTO\\Request\\Query\\');
     }
 
     public function resolve(Request $request, ArgumentMetadata $argument): iterable

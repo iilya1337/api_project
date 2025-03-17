@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DTO\Request;
+namespace App\DTO\Request\Query;
 
 use App\Entity\Dish;
 use JsonSerializable;
