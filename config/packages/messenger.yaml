@@ -1,9 +1,8 @@
-
 framework:
     messenger:
-
         transports:
-            #async: '%env(MESSENGER_TRANSPORT_DSN)%'
-
+            redis_transport:
+                dsn: "%env(REDIS_DSN)%"
+                options:
+                    class: Redis
         routing:
-            #'App\Message\OrderProcessed': async

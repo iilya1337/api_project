@@ -19,10 +19,13 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
-    App\ValueResolver\DtoRequestResolver:
+    App\ValueResolver\JsonResolver\DtoRequestJsonResolver:
         tags: [ 'controller.argument_value_resolver' ]
 
+    App\ValueResolver\QueryResolver\DtoRequestQueryResolver:
+        tags: [ 'controller.argument_value_resolver' ]
 
-
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    Redis:
+        class: Redis
+        calls:
+            - [ connect, [ '127.0.0.1', '6379' ] ]

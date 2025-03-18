@@ -13,16 +13,12 @@ class UserService {
 
     public function __construct(
         private readonly EntityManagerInterface $em,
-        private readonly ValidatorDTO $validatorDTO,
         private readonly UserPasswordHasherInterface $passwordHasher
     ) { }
 
     public function saveUser(UserRequest $userDto): User
     {
-        $this->validatorDTO->validate($userDto);
-
         $user = new User;
-
         $user->setEmail($userDto->email);
         $user->setPassword($this->passwordHasher->hashPassword($user, $userDto->password));
 
